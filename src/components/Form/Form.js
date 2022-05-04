@@ -25,7 +25,9 @@ const Form = () => {
     <div className="form">
       <div className="progressbar">
         <div
-          style={{ width: page === 0 ? '33.3%' : page == 1 ? '66.6%' : '100%' }}
+          style={{
+            width: page === 0 ? '33.3%' : page === 1 ? '66.6%' : '100%',
+          }}
         ></div>
       </div>
       <div className="form-container">
@@ -35,13 +37,13 @@ const Form = () => {
         <div className="body">{PageDisplay()}</div>
         <div className="footer">
           <button
-            disabled={page == 0}
+            disabled={page === 0}
             onClick={() => setPage((currentPage) => currentPage - 1)}
           >
             Prev
           </button>
           <button
-            disabled={page == FormTitles.length - 1}
+            disabled={page === FormTitles.length - 1}
             onClick={() => setPage((currentPage) => currentPage + 1)}
           >
             Next
